@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-n+xyl3o%qcpt7ptay2=&+f0%w@5k=(g3jv_8_1ofvf=69!td1w
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'arsen505.pythonanywhere.com/'
+    'arsen505.pythonanywhere.com'
 ]
 
 
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'user',
     "corsheaders",
     'students'
-
 ]
 
 MIDDLEWARE = [
