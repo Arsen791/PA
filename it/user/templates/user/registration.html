@@ -4,29 +4,63 @@
     <title>Registration</title>
     <style>
 .container {
-        max-width: 500px;
-        margin: 0 auto;
-    }
-    .login-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .field-wrapper {
-        margin-bottom: 15px;
-    }
-    .text-danger {
-        color: red;
-        font-size: 14px;
-        margin-top: 5px;
-    }
-    h2 {
-        text-align: center;
-        margin-bottom: 25px;
-    }
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    form input[type="text"],
+.field-wrapper {
+  margin-bottom: 20px;
+}
+
+.text-danger {
+  color: red;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.login-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+}
+
+form h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #343a40;
+  font-size: 24px;
+}
+
+form label {
+  font-size: 16px;
+  color: #343a40;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
   width: 100%;
@@ -38,13 +72,7 @@ form input[type="password"] {
   border-radius: 5px;
 }
 
-    form {
-        border: 1px solid #ddd;
-        padding: 30px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
-    }
-    form button[type="submit"] {
+form button[type="submit"] {
   margin-top: 20px;
   padding: 10px;
   font-size: 16px;
@@ -54,7 +82,7 @@ form input[type="password"] {
   border-radius: 5px;
 }
 
-    form a {
+form a {
   display: block;
   margin-top: 20px;
   text-align: center;
