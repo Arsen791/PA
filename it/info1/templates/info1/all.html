@@ -53,10 +53,32 @@
     </tbody>
   </table>
 
-  <button onclick="exportTableToCSV('users_table.csv')">Скачать в формате таблицы</button>
+  <button class="btn" onclick="exportTableToCSV('users_table.csv')">Скачать в формате таблицы</button>
 
 
   <style>
+
+.btn {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #004282;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+  border: 1px solid #ced4da;
+  color: #004282;
+}
+
     table {
       border-collapse: collapse;
       width: 2400px;
