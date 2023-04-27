@@ -8,6 +8,204 @@
   <title>{{user_name.firstname}}</title>
 </head>
 <body>
+
+  <style>
+    body{
+    margin: 0;
+  }
+  .tab{
+    color: #fff;
+    margin-left: 150px;
+    margin-right: 1000px;
+    font-size: 25px;
+
+  }
+  .menu{
+    background-color: #004282;
+ 
+  }
+  .menu1{
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+  .q {
+    color: #fff;
+    text-decoration: none;
+  }
+  img{
+    width: 170px;
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+
+
+  .card-1 {
+  
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -10px;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.card {
+ 
+  width: calc(33.33% - 20px);
+  margin: 0 10px 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #004282;
+}
+
+.card-text {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #004182d0;
+}
+
+.delete-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+
+.form-title {
+  color: #004282;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 550;
+  color: #004182d0;
+}
+
+
+input[type=date] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #fff;
+  color: #555;
+}
+
+input[type=number] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #fff;
+  color: #555;
+}
+
+input[type=number]:focus {
+  border-color: #0a315a;
+  box-shadow: 0 0 0 0.05rem #004282;
+}
+
+
+.form-group input[type=date]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #004282;
+  box-shadow: 0 0 0 0.05rem #004282;
+}
+
+
+.form-group input[type=text],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group input[type=text]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #004282;
+  box-shadow: 0 0 0 0.05rem #004282;
+}
+
+.form-btn {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #004282;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-btn:hover {
+  background-color: #004182c4;
+}
+
+
+  </style>
   <div class="menu"  >
     <div class="menu1" >
       <div class="tab">Таблица</div>
@@ -494,202 +692,5 @@
 {% endif %}
 </div>
   
-  <style>
-    body{
-    margin: 0;
-  }
-  .tab{
-    color: #fff;
-    margin-left: 150px;
-    margin-right: 1000px;
-    font-size: 25px;
-
-  }
-  .menu{
-    background-color: #004282;
- 
-  }
-  .menu1{
-    display: flex;
-    align-items: center;
-    height: 50px;
-  }
-  .q {
-    color: #fff;
-    text-decoration: none;
-  }
-  img{
-    width: 170px;
-    margin-left: 30px;
-    margin-top: 10px;
-  }
-
-
-  .card-1 {
-  
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.card-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 -10px;
-  margin-top: 50px;
-  margin-left: 10px;
-}
-
-.card {
- 
-  width: calc(33.33% - 20px);
-  margin: 0 10px 20px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-  margin-top: 10px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card-body {
-  padding: 20px;
-}
-
-.card-title {
-  margin-bottom: 15px;
-  font-size: 24px;
-  font-weight: 600;
-  color: #004282;
-}
-
-.card-text {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #004182d0;
-}
-
-.delete-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #dc3545;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  margin-bottom: 10px;
-  margin-left: 15px;
-  text-decoration: none;
-}
-
-.delete-btn:hover {
-  background-color: #c82333;
-}
-
-
-@media only screen and (max-width: 768px) {
-  .card {
-    width: calc(50% - 20px);
-  }
-}
-
-
-.form-title {
-  color: #004282;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 16px;
-  font-weight: 550;
-  color: #004182d0;
-}
-
-
-input[type=date] {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  outline: none;
-  background-color: #fff;
-  color: #555;
-}
-
-input[type=number] {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  outline: none;
-  background-color: #fff;
-  color: #555;
-}
-
-input[type=number]:focus {
-  border-color: #0a315a;
-  box-shadow: 0 0 0 0.05rem #004282;
-}
-
-
-.form-group input[type=date]:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #004282;
-  box-shadow: 0 0 0 0.05rem #004282;
-}
-
-
-.form-group input[type=text],
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.form-group input[type=text]:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #004282;
-  box-shadow: 0 0 0 0.05rem #004282;
-}
-
-.form-btn {
-  display: block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  background-color: #004282;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.form-btn:hover {
-  background-color: #004182c4;
-}
-
-
-  </style>
 </body>
 </html>
