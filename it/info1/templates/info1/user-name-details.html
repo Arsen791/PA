@@ -231,17 +231,17 @@ input[type=number]:focus {
 
       {% if user.id == user_name.owner.id and user_births|length == 0 %}
     <form action="/info1/{{user_name.id}}/user_births-create" method="POST" novalidate>
-        <h4 class="form-title">Write something new here:</h4>
+        <h4 class="form-title">Напишите здесь  свои данные </h4>
         {% csrf_token %}
-        {% for field in form %}
             <div class="form-group">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
+                <label for="{{ field.id_for_label }}">Год рождения:</label>
+                {{ form.date_of_birth }}
+                <label for="{{ field.id_for_label }}">Место рождения:</label>
+                {{ form.place_of_birth }}
                 <div class="text-danger">
                     {{ field.errors }}
                 </div>
             </div>
-        {% endfor %}
         <button class="btn btn-primary form-btn" type="submit">Create</button>
     </form>
 {% endif %}
@@ -251,8 +251,8 @@ input[type=number]:focus {
           {% for user_birth in user_births %}
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Date of birth: {{ user_birth.date_of_birth }}</h5>
-                <p class="card-text">Place of birth: {{ user_birth.place_of_birth }}</p>
+                <h5 class="card-title">Год рождения: {{ user_birth.date_of_birth }}</h5>
+                <p class="card-text">Место рождения: {{ user_birth.place_of_birth }}</p>
                 <p class="card-text">{{ user_name.created_at }}</p>
               </div>
                 {% if user.id == user_name.owner.id %}
@@ -265,7 +265,7 @@ input[type=number]:focus {
       {% else %}
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">No posts are created yet!</h4>
+            <h4 class="card-title">Еще не создано ни одной записи!</h4>
           </div>
         </div>
       {% endif %}
@@ -273,7 +273,7 @@ input[type=number]:focus {
 
     {% if user.id == user_name.owner.id and user_infos|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/user_infos-create" method="POST" novalidate>
-        <h4 class="form-title">Write something new here:</h4>
+        <h4 class="form-title">Напишите здесь  свои данные :</h4>
         {% csrf_token %}
         {% for field in form1 %}
             <div class="form-group">
@@ -307,14 +307,14 @@ input[type=number]:focus {
       {% else %}
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">No posts are created yet!</h4>
+            <h4 class="card-title">Еще не создано ни одной записи!</h4>
           </div>
         </div>
       {% endif %}
 
   {% if user.id == user_name.owner.id and user_works|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/user_works-create" method="POST" novalidate>
-        <h4 class="form-title">Write something new here:</h4>
+        <h4 class="form-title">Напишите здесь  свои данные :</h4>
         {% csrf_token %}
         {% for field in form2 %}
             <div class="form-group">
@@ -346,14 +346,14 @@ input[type=number]:focus {
       {% else %}
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">No posts are created yet!</h4>
+          <h4 class="card-title">Еще не создано ни одной записи!</h4>
         </div>
       </div>
     {% endif %}
 
     {% if user.id == user_name.owner.id and practices|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/practices-create" method="POST" novalidate>
-        <h4 class="form-title">Write something new here:</h4>
+        <h4 class="form-title">Напишите здесь  свои данные :</h4>
         {% csrf_token %}
         {% for field in form3 %}
             <div class="form-group">
@@ -384,14 +384,14 @@ input[type=number]:focus {
    {% else %}
    <div class="card">
      <div class="card-body">
-       <h4 class="card-title">No posts are created yet!</h4>
+       <h4 class="card-title">Еще не создано ни одной записи!</h4>
      </div>
    </div>
  {% endif %}
 
  {% if user.id == user_name.owner.id and criminals|length == 0 %}
  <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/criminals-create" method="POST" novalidate>
-     <h4 class="form-title">Write something new here:</h4>
+     <h4 class="form-title">Напишите здесь  свои данные :</h4>
      {% csrf_token %}
      {% for field in form4 %}
          <div class="form-group">
@@ -422,14 +422,14 @@ input[type=number]:focus {
       {% else %}
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">No posts are created yet!</h4>
+          <h4 class="card-title">Еще не создано ни одной записи!</h4>
         </div>
       </div>
     {% endif %}
 
     {% if user.id == user_name.owner.id and medicines|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/medicines-create" method="POST" novalidate>
-        <h4 class="form-title">Write something new here:</h4>
+        <h4 class="form-title">Напишите здесь  свои данные :</h4>
         {% csrf_token %}
         {% for field in form5 %}
             <div class="form-group">
@@ -461,14 +461,14 @@ input[type=number]:focus {
    {% else %}
    <div class="card">
      <div class="card-body">
-       <h4 class="card-title">No posts are created yet!</h4>
+       <h4 class="card-title">Еще не создано ни одной записи!</h4>
      </div>
    </div>
  {% endif %}
 
  {% if user.id == user_name.owner.id and masters|length == 0 %}
  <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/masters-create" method="POST" novalidate>
-     <h4 class="form-title">Write something new here:</h4>
+     <h4 class="form-title">Напишите здесь  свои данные :</h4>
      {% csrf_token %}
      {% for field in form6 %}
          <div class="form-group">
@@ -488,7 +488,7 @@ input[type=number]:focus {
        {% for master in masters %}        
                  <div class="card">
                      <div class="card-body">
-                      <p class="card-text"> Master degree :             {{ master.master_degree}}</p>
+                      <p class="card-text"> Master degree :{{ master.master_degree}}</p>
                      </div>
                            {% if user.id == user_name.owner.id %}
                                  <a href="/info1/{{user_name.id}}/delete_7" class="delete-btn btn btn-danger">Delete</a>
@@ -499,14 +499,14 @@ input[type=number]:focus {
    {% else %}
    <div class="card">
      <div class="card-body">
-       <h4 class="card-title">No posts are created yet!</h4>
+       <h4 class="card-title">Еще не создано ни одной записи!</h4>
      </div>
    </div>
  {% endif %}
 
  {% if user.id == user_name.owner.id and doctors|length == 0 %}
  <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/doctors-create" method="POST" novalidate>
-   <h4 class="form-title">Write something new here:</h4>
+   <h4 class="form-title">Напишите здесь  свои данные :</h4>
    {% csrf_token %}
    {% for field in form7 %}
      <div class="form-group">
@@ -537,14 +537,14 @@ input[type=number]:focus {
  {% else %}
  <div class="card">
    <div class="card-body">
-     <h4 class="card-title">No posts are created yet!</h4>
+     <h4 class="card-title">Еще не создано ни одной записи!</h4>
    </div>
  </div>
 {% endif %}
 
 {% if user.id == user_name.owner.id and phds|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/phds-create" method="POST" novalidate>
-        <h4 class="form-title">Write something new here:</h4>
+        <h4 class="form-title">Напишите здесь  свои данные :</h4>
         {% csrf_token %}
         {% for field in form8 %}
             <div class="form-group">
@@ -575,14 +575,14 @@ input[type=number]:focus {
  {% else %}
  <div class="card">
    <div class="card-body">
-     <h4 class="card-title">No posts are created yet!</h4>
+     <h4 class="card-title">Еще не создано ни одной записи!</h4>
    </div>
  </div>
 {% endif %}
 
 {% if user.id == user_name.owner.id and professors|length == 0 %}
 <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/professors-create" method="POST" novalidate>
-    <h4 class="form-title">Write something new here:</h4>
+    <h4 class="form-title">Напишите здесь  свои данные :</h4>
     {% csrf_token %}
     {% for field in form9 %}
         <div class="form-group">
@@ -613,14 +613,14 @@ input[type=number]:focus {
    {% else %}
    <div class="card">
      <div class="card-body">
-       <h4 class="card-title">No posts are created yet!</h4>
+       <h4 class="card-title">Еще не создано ни одной записи!</h4>
      </div>
    </div>
  {% endif %}
 
  {% if user.id == user_name.owner.id and sports|length == 0 %}
  <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/sports-create" method="POST" novalidate>
-     <h4 class="form-title">Write something new here:</h4>
+     <h4 class="form-title">Напишите здесь  свои данные :</h4>
      {% csrf_token %}
      {% for field in form10 %}
          <div class="form-group">
@@ -651,14 +651,14 @@ input[type=number]:focus {
  {% else %}
  <div class="card">
    <div class="card-body">
-     <h4 class="card-title">No posts are created yet!</h4>
+     <h4 class="card-title">Еще не создано ни одной записи!</h4>
    </div>
  </div>
 {% endif %}
 
 {% if user.id == user_name.owner.id and subjects|length == 0 %}
 <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/subjects-create" method="POST" novalidate>
-    <h4 class="form-title">Write something new here:</h4>
+    <h4 class="form-title">Напишите здесь  свои данные :</h4>
     {% csrf_token %}
     {% for field in form11 %}
         <div class="form-group">
@@ -689,7 +689,7 @@ input[type=number]:focus {
  {% else %}
  <div class="card">
    <div class="card-body">
-     <h4 class="card-title">No posts are created yet!</h4>
+     <h4 class="card-title">Еще не создано ни одной записи!</h4>
    </div>
  </div>
 {% endif %}
