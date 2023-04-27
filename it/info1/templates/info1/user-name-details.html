@@ -69,7 +69,7 @@
   margin-top: 10px;
 }
 
-.card-1 {
+.card-1-1 {
  
  width: 1200px;
  margin: 0 10px 20px;
@@ -240,7 +240,7 @@ input[type=number]:focus {
         {% endif %}
       </div>
     </div>
-    <div class="card-1">
+    <div class="card-1-1">
           {% if user.id == user_name.owner.id and user_births|length == 0 %}
         <form action="/info1/{{user_name.id}}/user_births-create" method="POST" novalidate>
             <h4 class="form-title">Напишите здесь  свои данные </h4>
@@ -258,7 +258,7 @@ input[type=number]:focus {
         </form>
     {% endif %}
   </div>
-  <div class="card-1">
+  <div class="card-1-1">
         {% if user.id == user_name.owner.id and user_infos|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/user_infos-create" method="POST" novalidate>
             <h4 class="form-title">Напишите свои данные о высшем образовании :</h4>
@@ -278,7 +278,7 @@ input[type=number]:focus {
         </form>
     {% endif %}
   </div>
-    <div class="card-1">
+    <div class="card-1-1">
       {% if user.id == user_name.owner.id and user_works|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/user_works-create" method="POST" novalidate>
             <h4 class="form-title">Напишите здесь свои данные о вашем основном месте работы:</h4>
@@ -297,7 +297,7 @@ input[type=number]:focus {
         </form>
     {% endif %}  
   </div>
-    <div class="card-1">
+    <div class="card-1-1">
         {% if user.id == user_name.owner.id and practices|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/practices-create" method="POST" novalidate>
             <h4 class="form-title">Напишите здесь о своем опыте работы :</h4>
@@ -313,7 +313,7 @@ input[type=number]:focus {
         </form>
     {% endif %}
   </div>
-    <div class="card-1">
+    <div class="card-1-1">
     {% if user.id == user_name.owner.id and criminals|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/criminals-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь  информацию об отсутствии (наличии) судимости :</h4>
@@ -329,7 +329,7 @@ input[type=number]:focus {
     </form>
     {% endif %}
   </div>
-    <div class="card-1">
+    <div class="card-1-1">
         {% if user.id == user_name.owner.id and medicines|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/medicines-create" method="POST" novalidate>
             <h4 class="form-title">Напишите здесь свои данные о медицинской книжке:</h4>
@@ -345,7 +345,7 @@ input[type=number]:focus {
         </form>
     {% endif %}
   </div>
-    <div class="card-1">
+    <div class="card-1-1">
     {% if user.id == user_name.owner.id and masters|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/masters-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь свои данные об информации о степени магистра:</h4>
@@ -361,7 +361,7 @@ input[type=number]:focus {
     </form>
     {% endif %}
   </div>
-    <div class="card-1">
+    <div class="card-1-1">
     {% if user.id == user_name.owner.id and doctors|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/doctors-create" method="POST" novalidate>
       <h4 class="form-title">Напишите здесь свои данные об информации об ученой степени "Кандидат наук", или "Доктор наук", или "Доктор философии (PhD)", или "Доктор по профилю". :</h4>
@@ -378,7 +378,7 @@ input[type=number]:focus {
     {% endif %}
   </div>
 
-    <div class="card-1">
+    <div class="card-1-1">
     {% if user.id == user_name.owner.id and professors|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/professors-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь свои данные об информации об ученом звании "Ассоциированный профессор (доцент)" или "Профессор":</h4>
@@ -395,7 +395,7 @@ input[type=number]:focus {
     {% endif %}
   </div>
 
-    <div class="card-1">
+    <div class="card-1-1">
     {% if user.id == user_name.owner.id and sports|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/sports-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь свои данные о спортивном звании "Заслуженный тренер" :</h4>
@@ -414,7 +414,7 @@ input[type=number]:focus {
     {% endif %}
   </div>
 
-    <div class="card-1">
+    <div class="card-1-1">
     {% if user.id == user_name.owner.id and subjects|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/subjects-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь свои данные о преподаваемой дисциплине:</h4>
