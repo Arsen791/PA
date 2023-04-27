@@ -3,16 +3,42 @@
 {% block head %}
     <title>Registration</title>
     <style>
-        .login-row {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .field_wrapper {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+.container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .login-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .field-wrapper {
+        margin-bottom: 15px;
+    }
+    .text-danger {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    form {
+        border: 1px solid #ddd;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    }
+    button[type="submit"] {
+        margin-top: 15px;
+    }
+    a.block {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+    }
     </style>
 {% endblock %}
 
