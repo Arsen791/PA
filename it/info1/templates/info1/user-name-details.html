@@ -69,6 +69,17 @@
   margin-top: 10px;
 }
 
+.card-1 {
+ 
+ width: 1200px;
+ margin: 0 10px 20px;
+ box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+ border-radius: 10px;
+ overflow: hidden;
+ transition: transform 0.2s ease-in-out;
+ margin-top: 10px;
+}
+
 .card:hover {
   transform: translateY(-5px);
 }
@@ -229,7 +240,7 @@ input[type=number]:focus {
         {% endif %}
       </div>
     </div>
-
+    <div class="card-1">
           {% if user.id == user_name.owner.id and user_births|length == 0 %}
         <form action="/info1/{{user_name.id}}/user_births-create" method="POST" novalidate>
             <h4 class="form-title">Напишите здесь  свои данные </h4>
@@ -246,7 +257,8 @@ input[type=number]:focus {
             <button class="btn btn-primary form-btn" type="submit">Создать</button>
         </form>
     {% endif %}
-
+  </div>
+  <div class="card-1">
         {% if user.id == user_name.owner.id and user_infos|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/user_infos-create" method="POST" novalidate>
             <h4 class="form-title">Напишите свои данные о высшем образовании :</h4>
@@ -265,7 +277,8 @@ input[type=number]:focus {
             <button class="btn btn-primary form-btn" type="submit">Создать</button>
         </form>
     {% endif %}
-
+  </div>
+    <div class="card-1">
       {% if user.id == user_name.owner.id and user_works|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/user_works-create" method="POST" novalidate>
             <h4 class="form-title">Напишите здесь свои данные о вашем основном месте работы:</h4>
@@ -283,7 +296,8 @@ input[type=number]:focus {
             <button class="btn btn-primary form-btn" type="submit">Создать</button>
         </form>
     {% endif %}  
-
+  </div>
+    <div class="card-1">
         {% if user.id == user_name.owner.id and practices|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/practices-create" method="POST" novalidate>
             <h4 class="form-title">Напишите здесь о своем опыте работы :</h4>
@@ -298,28 +312,8 @@ input[type=number]:focus {
             <button class="btn btn-primary form-btn" type="submit">Создать</button>
         </form>
     {% endif %}
-
-        {% if practices|length %}
-        <div class="card-group">
-          {% for practice in practices %}        
-                    <div class="card">
-                        <div class="card-body">
-                          <p class="card-text">Стаж : {{ practice.experience}}</p>
-                        </div>
-                              {% if user.id == user_name.owner.id %}
-                                    <a href="/info1/{{user_name.id}}/delete_4" class="delete-btn btn btn-danger">Удалить</a>
-                              {% endif %}
-                    </div>               
-            {% endfor %}
-        </div>
-      {% else %}
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Еще не создано ни одной записи!</h4>
-        </div>
-      </div>
-    {% endif %}
-
+  </div>
+    <div class="card-1">
     {% if user.id == user_name.owner.id and criminals|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/criminals-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь  информацию об отсутствии (наличии) судимости :</h4>
@@ -334,28 +328,8 @@ input[type=number]:focus {
         <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
     {% endif %}
-
-        {% if criminals|length %}
-          <div class="card-group">
-              {% for criminal in criminals %}        
-                        <div class="card">
-                            <div class="card-body">
-                              <p class="card-text">Наличии судимости : {{ criminal.criminal_record}}</p>
-                            </div>
-                                  {% if user.id == user_name.owner.id %}
-                                        <a href="/info1/{{user_name.id}}/delete_5" class="delete-btn btn btn-danger">Удалить</a>
-                                  {% endif %}
-                        </div>               
-                {% endfor %}
-            </div>
-          {% else %}
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Еще не создано ни одной записи!</h4>
-            </div>
-          </div>
-        {% endif %}
-
+  </div>
+    <div class="card-1">
         {% if user.id == user_name.owner.id and medicines|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/medicines-create" method="POST" novalidate>
             <h4 class="form-title">Напишите здесь свои данные о медицинской книжке:</h4>
@@ -370,28 +344,8 @@ input[type=number]:focus {
             <button class="btn btn-primary form-btn" type="submit">Создать</button>
         </form>
     {% endif %}
-
-        {% if medicines|length %}
-        <div class="card-group">
-          {% for medicine in medicines %}        
-                    <div class="card">
-                        <div class="card-body">
-                          <p class="card-text">Номер медицинской книжки : {{ medicine.medicine_number}}</p>
-                        </div>
-                              {% if user.id == user_name.owner.id %}
-                                    <a href="/info1/{{user_name.id}}/delete_6" class="delete-btn btn btn-danger">Удалить</a>
-                              {% endif %}
-                    </div>               
-            {% endfor %}
-        </div>
-      {% else %}
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Еще не создано ни одной записи!</h4>
-        </div>
-      </div>
-    {% endif %}
-
+  </div>
+    <div class="card-1">
     {% if user.id == user_name.owner.id and masters|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/masters-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь свои данные об информации о степени магистра:</h4>
@@ -406,28 +360,8 @@ input[type=number]:focus {
         <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
     {% endif %}
-
-        {% if masters|length %}
-        <div class="card-group">
-          {% for master in masters %}        
-                    <div class="card">
-                        <div class="card-body">
-                          <p class="card-text">Магистратура :{{ master.master_degree}}</p>
-                        </div>
-                              {% if user.id == user_name.owner.id %}
-                                    <a href="/info1/{{user_name.id}}/delete_7" class="delete-btn btn btn-danger">Удалить</a>
-                              {% endif %}
-                    </div>               
-            {% endfor %}
-        </div>
-      {% else %}
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Еще не создано ни одной записи!</h4>
-        </div>
-      </div>
-    {% endif %}
-
+  </div>
+    <div class="card-1">
     {% if user.id == user_name.owner.id and doctors|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/doctors-create" method="POST" novalidate>
       <h4 class="form-title">Напишите здесь свои данные об информации об ученой степени "Кандидат наук", или "Доктор наук", или "Доктор философии (PhD)", или "Доктор по профилю". :</h4>
@@ -442,28 +376,9 @@ input[type=number]:focus {
       <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
     {% endif %}
+  </div>
 
-      {% if doctors|length %}
-      <div class="card-group">
-        {% for doctor in doctors %}        
-                  <div class="card">
-                      <div class="card-body">
-                        <p class="card-text">Доктор по профилю : {{ doctor.doctor_profile}}</p>
-                      </div>
-                            {% if user.id == user_name.owner.id %}
-                                  <a href="/info1/{{user_name.id}}/delete_8" class="delete-btn btn btn-danger">Удалить</a>
-                            {% endif %}
-                  </div>               
-          {% endfor %}
-      </div>
-    {% else %}
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Еще не создано ни одной записи!</h4>
-      </div>
-    </div>
-    {% endif %}
-
+    <div class="card-1">
     {% if user.id == user_name.owner.id and professors|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/professors-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь свои данные об информации об ученом звании "Ассоциированный профессор (доцент)" или "Профессор":</h4>
@@ -478,28 +393,9 @@ input[type=number]:focus {
         <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
     {% endif %}
+  </div>
 
-        {% if professors|length %}
-        <div class="card-group">
-          {% for professor in professors %}        
-                    <div class="card">
-                        <div class="card-body">
-                          <p class="card-text">Ассоциированный профессор : {{ professor.docent_professor}}</p>
-                        </div>
-                              {% if user.id == user_name.owner.id %}
-                                    <a href="/info1/{{user_name.id}}/delete_10" class="delete-btn btn btn-danger">Удалить</a>
-                              {% endif %}
-                    </div>               
-            {% endfor %}
-        </div>
-      {% else %}
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Еще не создано ни одной записи!</h4>
-        </div>
-      </div>
-    {% endif %}
-
+    <div class="card-1">
     {% if user.id == user_name.owner.id and sports|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/sports-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь свои данные о спортивном звании "Заслуженный тренер" :</h4>
@@ -516,28 +412,9 @@ input[type=number]:focus {
         <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
     {% endif %}
+  </div>
 
-      {% if sports|length %}
-      <div class="card-group">
-        {% for sport in sports %}        
-                  <div class="card">
-                      <div class="card-body">
-                        <p class="card-text">Заслуженный тренер : {{ sport.sport_degree}}</p>
-                      </div>
-                            {% if user.id == user_name.owner.id %}
-                                  <a href="/info1/{{user_name.id}}/delete_11" class="delete-btn btn btn-danger">Удалить</a>
-                            {% endif %}
-                  </div>               
-          {% endfor %}
-      </div>
-    {% else %}
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Еще не создано ни одной записи!</h4>
-      </div>
-    </div>
-    {% endif %}
-
+    <div class="card-1">
     {% if user.id == user_name.owner.id and subjects|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/subjects-create" method="POST" novalidate>
         <h4 class="form-title">Напишите здесь свои данные о преподаваемой дисциплине:</h4>
@@ -554,21 +431,8 @@ input[type=number]:focus {
         <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
     {% endif %}
+</div>
 
-      {% if subjects|length %}
-      <div class="card-group">
-        {% for subject in subjects %}        
-                  <div class="card">
-                      <div class="card-body">
-                        <p class="card-text"> Преподаваемая дисциплина : {{ subject.subject_of_teaching}}</p>
-                      </div>
-                            {% if user.id == user_name.owner.id %}
-                                  <a href="/info1/{{user_name.id}}/delete_12" class="delete-btn btn btn-danger">Удалить</a>
-                            {% endif %}
-                  </div>               
-          {% endfor %}
-      </div>
-    {% endif %}
 <div class="ortasy" style="display: flex;flex-wrap: wrap;"> 
         {% if user_births|length %}
     <div class="card-group">
@@ -622,6 +486,125 @@ input[type=number]:focus {
                 {% endfor %}
             </div>
         {% endif %}
+
+        {% if practices|length %}
+        <div class="card-group">
+          {% for practice in practices %}        
+                    <div class="card">
+                        <div class="card-body">
+                          <p class="card-text">Стаж : {{ practice.experience}}</p>
+                        </div>
+                              {% if user.id == user_name.owner.id %}
+                                    <a href="/info1/{{user_name.id}}/delete_4" class="delete-btn btn btn-danger">Удалить</a>
+                              {% endif %}
+                    </div>               
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if criminals|length %}
+    <div class="card-group">
+        {% for criminal in criminals %}        
+                  <div class="card">
+                      <div class="card-body">
+                        <p class="card-text">Наличии судимости : {{ criminal.criminal_record}}</p>
+                      </div>
+                            {% if user.id == user_name.owner.id %}
+                                  <a href="/info1/{{user_name.id}}/delete_5" class="delete-btn btn btn-danger">Удалить</a>
+                            {% endif %}
+                  </div>               
+          {% endfor %}
+      </div>
+
+      {% if medicines|length %}
+      <div class="card-group">
+        {% for medicine in medicines %}        
+                  <div class="card">
+                      <div class="card-body">
+                        <p class="card-text">Номер медицинской книжки : {{ medicine.medicine_number}}</p>
+                      </div>
+                            {% if user.id == user_name.owner.id %}
+                                  <a href="/info1/{{user_name.id}}/delete_6" class="delete-btn btn btn-danger">Удалить</a>
+                            {% endif %}
+                  </div>               
+          {% endfor %}
+      </div>
+  {% endif %}
+
+  {% if masters|length %}
+  <div class="card-group">
+    {% for master in masters %}        
+              <div class="card">
+                  <div class="card-body">
+                    <p class="card-text">Магистратура :{{ master.master_degree}}</p>
+                  </div>
+                        {% if user.id == user_name.owner.id %}
+                              <a href="/info1/{{user_name.id}}/delete_7" class="delete-btn btn btn-danger">Удалить</a>
+                        {% endif %}
+              </div>               
+      {% endfor %}
+  </div>
+{% endif %}
+
+{% if doctors|length %}
+<div class="card-group">
+  {% for doctor in doctors %}        
+            <div class="card">
+                <div class="card-body">
+                  <p class="card-text">Доктор по профилю : {{ doctor.doctor_profile}}</p>
+                </div>
+                      {% if user.id == user_name.owner.id %}
+                            <a href="/info1/{{user_name.id}}/delete_8" class="delete-btn btn btn-danger">Удалить</a>
+                      {% endif %}
+            </div>               
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if professors|length %}
+<div class="card-group">
+  {% for professor in professors %}        
+            <div class="card">
+                <div class="card-body">
+                  <p class="card-text">Ассоциированный профессор : {{ professor.docent_professor}}</p>
+                </div>
+                      {% if user.id == user_name.owner.id %}
+                            <a href="/info1/{{user_name.id}}/delete_10" class="delete-btn btn btn-danger">Удалить</a>
+                      {% endif %}
+            </div>               
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if sports|length %}
+<div class="card-group">
+  {% for sport in sports %}        
+            <div class="card">
+                <div class="card-body">
+                  <p class="card-text">Заслуженный тренер : {{ sport.sport_degree}}</p>
+                </div>
+                      {% if user.id == user_name.owner.id %}
+                            <a href="/info1/{{user_name.id}}/delete_11" class="delete-btn btn btn-danger">Удалить</a>
+                      {% endif %}
+            </div>               
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if subjects|length %}
+<div class="card-group">
+  {% for subject in subjects %}        
+            <div class="card">
+                <div class="card-body">
+                  <p class="card-text"> Преподаваемая дисциплина : {{ subject.subject_of_teaching}}</p>
+                </div>
+                      {% if user.id == user_name.owner.id %}
+                            <a href="/info1/{{user_name.id}}/delete_12" class="delete-btn btn btn-danger">Удалить</a>
+                      {% endif %}
+            </div>               
+    {% endfor %}
+</div>
+{% endif %}
   </div>
 </body>
 </html>
