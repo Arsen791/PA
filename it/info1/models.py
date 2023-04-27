@@ -61,7 +61,7 @@ class Criminal(models.Model):
         verbose_name_plural = 'Criminals'
 
 class Medicine(models.Model):
-    medicine_number = models.CharField(null=False)
+    medicine_number = models.CharField(null=False,max_length=255)
     user_name = models.OneToOneField(User_name, on_delete=models.CASCADE, null=False, related_name='medicines')
 
     class Meta:
