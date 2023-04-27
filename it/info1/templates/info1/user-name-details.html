@@ -446,7 +446,7 @@ input[type=number]:focus {
        {% for medicine in medicines %}        
                  <div class="card">
                      <div class="card-body">
-                      <p class="card-text">номер медицинской книжки : {{ medicine.medicine_number}}</p>
+                      <p class="card-text">Номер медицинской книжки : {{ medicine.medicine_number}}</p>
                      </div>
                            {% if user.id == user_name.owner.id %}
                                  <a href="/info1/{{user_name.id}}/delete_6" class="delete-btn btn btn-danger">Удалить</a>
