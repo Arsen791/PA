@@ -16,9 +16,8 @@ def login_page(request):
             user = auth.authenticate(username=username, password=password)
             if user.username == 'AlmaU' and user.password == 'alma2023':
                 return redirect('/all.html')
-            else:
-                login(request, user)
-                return redirect('/')
+            login(request, user)
+            return redirect('/')
         else:
             return render(request, 'user/login.html', {'form': form})
 
