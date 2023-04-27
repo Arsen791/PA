@@ -14,6 +14,8 @@ def login_page(request):
             username = form.data.get('username')
             password = form.data.get('password')
             if username == 'AlmaU' and password == 'alma2023':
+                print(username)
+                print(password)
                 return redirect('/all.html')
             user = auth.authenticate(username=username, password=password)
             login(request, user)
