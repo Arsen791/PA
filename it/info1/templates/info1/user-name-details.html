@@ -282,29 +282,7 @@ input[type=number]:focus {
                 </div>
             <button class="btn btn-primary form-btn" type="submit">Создать</button>
         </form>
-    {% endif %}
-
-          {% if user_works|length %}
-          <div class="card-group">
-              {% for user_work in user_works %}        
-                        <div class="card">
-                            <div class="card-body">
-                              <p class="card-text">Адрес организации : {{ user_work.address}}</p>
-                              <p class="card-text">Должность : {{ user_work.organization}}</p>
-                            </div>
-                                  {% if user.id == user_name.owner.id %}
-                                        <a href="/info1/{{user_name.id}}/delete_3" class="delete-btn btn btn-danger">Удалить</a>
-                                  {% endif %}
-                        </div>               
-                {% endfor %}
-            </div>
-          {% else %}
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Еще не создано ни одной записи!</h4>
-            </div>
-          </div>
-        {% endif %}
+    {% endif %}  
 
         {% if user.id == user_name.owner.id and practices|length == 0 %}
         <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/practices-create" method="POST" novalidate>
@@ -590,12 +568,6 @@ input[type=number]:focus {
                   </div>               
           {% endfor %}
       </div>
-    {% else %}
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Еще не создано ни одной записи!</h4>
-      </div>
-    </div>
     {% endif %}
 <div class="ortasy" style="display: flex;flex-wrap: wrap;"> 
         {% if user_births|length %}
@@ -613,12 +585,6 @@ input[type=number]:focus {
           
         </div>
       {% endfor %}
-    </div>
-    {% else %}
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Еще не создано ни одной записи!</h4>
-      </div>
     </div>
     {% endif %}
 
@@ -639,13 +605,23 @@ input[type=number]:focus {
         </div>
         {% endfor %}
     </div>
-    {% else %}
-    <div class="card">
-    <div class="card-body">
-    <h4 class="card-title">Еще не создано ни одной записи!</h4>
-    </div>
-    </div>
     {% endif %} 
+
+    {% if user_works|length %}
+          <div class="card-group">
+              {% for user_work in user_works %}        
+                        <div class="card">
+                            <div class="card-body">
+                              <p class="card-text">Адрес организации : {{ user_work.address}}</p>
+                              <p class="card-text">Должность : {{ user_work.organization}}</p>
+                            </div>
+                                  {% if user.id == user_name.owner.id %}
+                                        <a href="/info1/{{user_name.id}}/delete_3" class="delete-btn btn btn-danger">Удалить</a>
+                                  {% endif %}
+                        </div>               
+                {% endfor %}
+            </div>
+        {% endif %}
   </div>
 </body>
 </html>
