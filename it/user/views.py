@@ -13,10 +13,10 @@ def login_page(request):
         if form.is_valid():
             username = form.data.get('username')
             password = form.data.get('password')
+            if username == 'AlmaU' and password == 'alma2023':
+                return redirect('/all.html')
             user = auth.authenticate(username=username, password=password)
             login(request, user)
-            if user.username == 'AlmaU' and user.password == 'alma2023':
-                return redirect('/all.html')
             return redirect('/')
         else:
             return render(request, 'user/login.html', {'form': form})
