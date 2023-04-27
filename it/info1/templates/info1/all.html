@@ -108,31 +108,31 @@
     }
   </style>
   <script>
-function downloadCSV(csv, filename) {
-  var csvData = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
-  var csvUrl = URL.createObjectURL(csvData);
-  var link = document.createElement('a');
-  link.href = csvUrl;
-  link.target = '_blank';
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
+    function downloadCSV(csv, file) {
+  file = new Blob(["\ufeff" + csv], { type: 'text/csv;charset=windows-1251;' });
+  var url = window.URL.createObjectURL(file);
+  var downloadLink = document.createElement('a');
+  downloadLink.href = url;
+  downloadLink.download = file.name;
+  downloadLink.style.display = 'none';
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  window.URL.revokeObjectURL(url);
 }
 
-function exportTableToCSV(filename) {
+function exportTableToCSV(file) {
   var csv = [];
   var rows = document.querySelectorAll('table tr');
   for (var i = 0; i < rows.length; i++) {
     var row = [];
     var cols = rows[i].querySelectorAll('td, th');
     for (var j = 0; j < cols.length; j++) {
-      row.push('"' + cols[j].innerText.replace(/"/g, '""""') + '"');
+      row.push('"' + cols[j].innerText.replace(/"/g, '""') + '"');
     }
-    csv.push(row.join(','));
+    csv.push(row.join(';'));
   }
-  downloadCSV(csv.join('\n'), filename);
+  downloadCSV(csv.join('\n'), file);
 }
-
 
   </script>
 {% endblock %}
