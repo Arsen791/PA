@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import Http404
 from django.contrib.auth.models import User
 from info1.models import User_name, User_birth, User_info, User_work, Practice, Criminal, Medicine, Master, Doctor, Phd, Professor, Sport, Subject
 from info1.forms import CreateNameForm, CreateBirthForm, CreateInfoForm, CreateWorkForm, CreatePracticeForm, CreateCriminalForm, CreateMedicineForm, CreateMasterForm, CreateDoctorForm ,CreatePhdForm, CreateProfessorForm, CreateSportForm, CreateSubjectForm
