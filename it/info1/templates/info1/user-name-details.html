@@ -273,12 +273,15 @@ input[type=number]:focus {
 
     {% if user.id == user_name.owner.id and user_infos|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/user_infos-create" method="POST" novalidate>
-        <h4 class="form-title">Напишите здесь  свои данные :</h4>
+        <h4 class="form-title">Напишите свои данные о высшем образовании :</h4>
         {% csrf_token %}
-        {% for field in form1 %}
             <div class="form-group">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
+                <label for="{{ field.id_for_label }}">Специальность:</label>
+                {{ form1.specialization }}
+                <label for="{{ field.id_for_label }}">Организация образования:</label>
+                {{ form1.orga_of_education }}
+                <label for="{{ field.id_for_label }}">Год окончания</label>
+                {{ form1.year_of_graduation }}
                 <div class="text-danger">
                     {{ field.errors }}
                 </div>
@@ -293,12 +296,12 @@ input[type=number]:focus {
                   {% for user_info in user_infos %}
                   <div class='card'>
                             <div class="card-body">
-                                <p class="card-title">Specialization: {{ user_info.specialization }}</p>
-                                <p class="card-text">Organization of education: {{ user_info.orga_of_education }}</p>
-                                <p class="card-text">Year of graduation : {{ user_info.year_of_graduation}}</p>
+                                <p class="card-title">Специальность: {{ user_info.specialization }}</p>
+                                <p class="card-text">Организация образования: {{ user_info.orga_of_education }}</p>
+                                <p class="card-text">Год окончания : {{ user_info.year_of_graduation}}</p>
                             </div>
                                 {% if user.id == user_name.owner.id %}
-                                    <a href="/info1/{{user_name.id}}/delete_2" class="delete-btn btn btn-danger">Delete</a>
+                                    <a href="/info1/{{user_name.id}}/delete_2" class="delete-btn btn btn-danger">Удалить</a>
                                 {% endif %}
                             
                     </div>
@@ -314,18 +317,19 @@ input[type=number]:focus {
 
   {% if user.id == user_name.owner.id and user_works|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/user_works-create" method="POST" novalidate>
-        <h4 class="form-title">Напишите здесь  свои данные :</h4>
+        <h4 class="form-title">Напишите здесь свои данные о вашем основном месте работы:</h4>
         {% csrf_token %}
-        {% for field in form2 %}
+
             <div class="form-group">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
+                <label for="{{ field.id_for_label }}">Адрес организации :</label>
+                {{ form2.address }}
+                <label for="{{ field.id_for_label }}">Должность :</label>
+                {{ form2.organization }}
                 <div class="text-danger">
                     {{ field.errors }}
                 </div>
             </div>
-        {% endfor %}
-        <button class="btn btn-primary form-btn" type="submit">Create</button>
+        <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
 {% endif %}
 
@@ -334,11 +338,11 @@ input[type=number]:focus {
           {% for user_work in user_works %}        
                     <div class="card">
                         <div class="card-body">
-                          <p class="card-text">Address : {{ user_work.address}}</p>
-                          <p class="card-text">Organization : {{ user_work.organization}}</p>
+                          <p class="card-text">Адрес организации : {{ user_work.address}}</p>
+                          <p class="card-text">Должность : {{ user_work.organization}}</p>
                         </div>
                               {% if user.id == user_name.owner.id %}
-                                    <a href="/info1/{{user_name.id}}/delete_3" class="delete-btn btn btn-danger">Delete</a>
+                                    <a href="/info1/{{user_name.id}}/delete_3" class="delete-btn btn btn-danger">Удалить</a>
                               {% endif %}
                     </div>               
             {% endfor %}
@@ -353,18 +357,16 @@ input[type=number]:focus {
 
     {% if user.id == user_name.owner.id and practices|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/practices-create" method="POST" novalidate>
-        <h4 class="form-title">Напишите здесь  свои данные :</h4>
+        <h4 class="form-title">Напишите здесь о своем опыте работы :</h4>
         {% csrf_token %}
-        {% for field in form3 %}
             <div class="form-group">
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
+                {{ form3.experience }}
                 <div class="text-danger">
                     {{ field.errors }}
                 </div>
             </div>
-        {% endfor %}
-        <button class="btn btn-primary form-btn" type="submit">Create</button>
+        <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
 {% endif %}
 
@@ -373,10 +375,10 @@ input[type=number]:focus {
        {% for practice in practices %}        
                  <div class="card">
                      <div class="card-body">
-                       <p class="card-text">Experience : {{ practice.experience}}</p>
+                       <p class="card-text">Стаж : {{ practice.experience}}</p>
                      </div>
                            {% if user.id == user_name.owner.id %}
-                                 <a href="/info1/{{user_name.id}}/delete_4" class="delete-btn btn btn-danger">Delete</a>
+                                 <a href="/info1/{{user_name.id}}/delete_4" class="delete-btn btn btn-danger">Удалить</a>
                            {% endif %}
                  </div>               
          {% endfor %}
@@ -391,18 +393,16 @@ input[type=number]:focus {
 
  {% if user.id == user_name.owner.id and criminals|length == 0 %}
  <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/criminals-create" method="POST" novalidate>
-     <h4 class="form-title">Напишите здесь  свои данные :</h4>
+     <h4 class="form-title">Напишите здесь  информацию об отсутствии (наличии) судимости :</h4>
      {% csrf_token %}
-     {% for field in form4 %}
          <div class="form-group">
-             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-             {{ field }}
+             <label for="{{ field.id_for_label }}">Наличии судимости</label>
+             {{ form4.criminal_record }}
              <div class="text-danger">
                  {{ field.errors }}
              </div>
          </div>
-     {% endfor %}
-     <button class="btn btn-primary form-btn" type="submit">Create</button>
+     <button class="btn btn-primary form-btn" type="submit">Создать</button>
  </form>
 {% endif %}
 
@@ -411,10 +411,10 @@ input[type=number]:focus {
           {% for criminal in criminals %}        
                     <div class="card">
                         <div class="card-body">
-                          <p class="card-text">Criminal record : {{ criminal.criminal_record}}</p>
+                          <p class="card-text">Наличии судимости : {{ criminal.criminal_record}}</p>
                         </div>
                               {% if user.id == user_name.owner.id %}
-                                    <a href="/info1/{{user_name.id}}/delete_5" class="delete-btn btn btn-danger">Delete</a>
+                                    <a href="/info1/{{user_name.id}}/delete_5" class="delete-btn btn btn-danger">Удалить</a>
                               {% endif %}
                     </div>               
             {% endfor %}
@@ -429,18 +429,16 @@ input[type=number]:focus {
 
     {% if user.id == user_name.owner.id and medicines|length == 0 %}
     <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/medicines-create" method="POST" novalidate>
-        <h4 class="form-title">Напишите здесь  свои данные :</h4>
+        <h4 class="form-title">Напишите здесь свои данные о медицинской книжке:</h4>
         {% csrf_token %}
-        {% for field in form5 %}
             <div class="form-group">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
+                <label for="{{ field.id_for_label }}">Номер медицинской книжки :</label>
+                {{ form5.medicine_number }}
                 <div class="text-danger">
                     {{ field.errors }}
                 </div>
             </div>
-        {% endfor %}
-        <button class="btn btn-primary form-btn" type="submit">Create</button>
+        <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
 {% endif %}
 
@@ -449,11 +447,10 @@ input[type=number]:focus {
        {% for medicine in medicines %}        
                  <div class="card">
                      <div class="card-body">
-                      <p class="card-text">Medicine number : {{ medicine.medicine_number}}</p>
-                      <p class="card-text">Medicine date : {{ medicine.medicine_date}}</p>
+                      <p class="card-text">номер медицинской книжки : {{ medicine.medicine_number}}</p>
                      </div>
                            {% if user.id == user_name.owner.id %}
-                                 <a href="/info1/{{user_name.id}}/delete_6" class="delete-btn btn btn-danger">Delete</a>
+                                 <a href="/info1/{{user_name.id}}/delete_6" class="delete-btn btn btn-danger">Удалить</a>
                            {% endif %}
                  </div>               
          {% endfor %}
@@ -468,18 +465,16 @@ input[type=number]:focus {
 
  {% if user.id == user_name.owner.id and masters|length == 0 %}
  <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/masters-create" method="POST" novalidate>
-     <h4 class="form-title">Напишите здесь  свои данные :</h4>
+     <h4 class="form-title">Напишите здесь свои данные об информации о степени магистра:</h4>
      {% csrf_token %}
-     {% for field in form6 %}
          <div class="form-group">
-             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-             {{ field }}
+             <label for="{{ field.id_for_label }}">Магистратура :</label>
+             {{ form6.master_degree }}
              <div class="text-danger">
                  {{ field.errors }}
              </div>
          </div>
-     {% endfor %}
-     <button class="btn btn-primary form-btn" type="submit">Create</button>
+     <button class="btn btn-primary form-btn" type="submit">Создать</button>
  </form>
 {% endif %}
 
@@ -488,10 +483,10 @@ input[type=number]:focus {
        {% for master in masters %}        
                  <div class="card">
                      <div class="card-body">
-                      <p class="card-text"> Master degree :{{ master.master_degree}}</p>
+                      <p class="card-text">Магистратура :{{ master.master_degree}}</p>
                      </div>
                            {% if user.id == user_name.owner.id %}
-                                 <a href="/info1/{{user_name.id}}/delete_7" class="delete-btn btn btn-danger">Delete</a>
+                                 <a href="/info1/{{user_name.id}}/delete_7" class="delete-btn btn btn-danger">Удалить</a>
                            {% endif %}
                  </div>               
          {% endfor %}
@@ -506,18 +501,16 @@ input[type=number]:focus {
 
  {% if user.id == user_name.owner.id and doctors|length == 0 %}
  <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/doctors-create" method="POST" novalidate>
-   <h4 class="form-title">Напишите здесь  свои данные :</h4>
+   <h4 class="form-title">Напишите здесь свои данные об информации об ученой степени "Кандидат наук", или "Доктор наук", или "Доктор философии (PhD)", или "Доктор по профилю". :</h4>
    {% csrf_token %}
-   {% for field in form7 %}
      <div class="form-group">
-       <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-       {{ field }}
+       <label for="{{ field.id_for_label }}">Доктор по профилю :</label>
+       {{ form7.doctor_profile }}
        <div class="text-danger">
          {{ field.errors }}
        </div>
      </div>
-   {% endfor %}
-   <button class="btn btn-primary form-btn" type="submit">Create</button>
+   <button class="btn btn-primary form-btn" type="submit">Создать</button>
  </form>
 {% endif %}
 
@@ -526,48 +519,10 @@ input[type=number]:focus {
      {% for doctor in doctors %}        
                <div class="card">
                    <div class="card-body">
-                    <p class="card-text"> Doctor profile  : {{ doctor.doctor_profile}}</p>
+                    <p class="card-text">Доктор по профилю : {{ doctor.doctor_profile}}</p>
                    </div>
                          {% if user.id == user_name.owner.id %}
-                               <a href="/info1/{{user_name.id}}/delete_8" class="delete-btn btn btn-danger">Delete</a>
-                         {% endif %}
-               </div>               
-       {% endfor %}
-   </div>
- {% else %}
- <div class="card">
-   <div class="card-body">
-     <h4 class="card-title">Еще не создано ни одной записи!</h4>
-   </div>
- </div>
-{% endif %}
-
-{% if user.id == user_name.owner.id and phds|length == 0 %}
-    <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/phds-create" method="POST" novalidate>
-        <h4 class="form-title">Напишите здесь  свои данные :</h4>
-        {% csrf_token %}
-        {% for field in form8 %}
-            <div class="form-group">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
-                <div class="text-danger">
-                    {{ field.errors }}
-                </div>
-            </div>
-        {% endfor %}
-        <button class="btn btn-primary form-btn" type="submit">Create</button>
-    </form>
-{% endif %}
-
-  {% if phds|length %}
-  <div class="card-group">
-     {% for phd in phds %}        
-               <div class="card">
-                   <div class="card-body">
-                    <p class="card-text"> Phd record   : {{ phd.phd_record}}</p>
-                   </div>
-                         {% if user.id == user_name.owner.id %}
-                               <a href="/info1/{{user_name.id}}/delete_9" class="delete-btn btn btn-danger">Delete</a>
+                               <a href="/info1/{{user_name.id}}/delete_8" class="delete-btn btn btn-danger">Удалить</a>
                          {% endif %}
                </div>               
        {% endfor %}
@@ -582,18 +537,16 @@ input[type=number]:focus {
 
 {% if user.id == user_name.owner.id and professors|length == 0 %}
 <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/professors-create" method="POST" novalidate>
-    <h4 class="form-title">Напишите здесь  свои данные :</h4>
+    <h4 class="form-title">Напишите здесь свои данные об информации об ученом звании "Ассоциированный профессор (доцент)" или "Профессор":</h4>
     {% csrf_token %}
-    {% for field in form9 %}
         <div class="form-group">
-            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-            {{ field }}
+            <label for="{{ field.id_for_label }}">Ассоциированный профессор :</label>
+            {{ form9.docent_professor }}
             <div class="text-danger">
                 {{ field.errors }}
             </div>
         </div>
-    {% endfor %}
-    <button class="btn btn-primary form-btn" type="submit">Create</button>
+    <button class="btn btn-primary form-btn" type="submit">Создать</button>
 </form>
 {% endif %}
 
@@ -602,10 +555,10 @@ input[type=number]:focus {
        {% for professor in professors %}        
                  <div class="card">
                      <div class="card-body">
-                      <p class="card-text"> Docent professor    : {{ professor.docent_professor}}</p>
+                      <p class="card-text">Ассоциированный профессор : {{ professor.docent_professor}}</p>
                      </div>
                            {% if user.id == user_name.owner.id %}
-                                 <a href="/info1/{{user_name.id}}/delete_10" class="delete-btn btn btn-danger">Delete</a>
+                                 <a href="/info1/{{user_name.id}}/delete_10" class="delete-btn btn btn-danger">Удалить</a>
                            {% endif %}
                  </div>               
          {% endfor %}
@@ -620,18 +573,18 @@ input[type=number]:focus {
 
  {% if user.id == user_name.owner.id and sports|length == 0 %}
  <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/sports-create" method="POST" novalidate>
-     <h4 class="form-title">Напишите здесь  свои данные :</h4>
+     <h4 class="form-title">Напишите здесь свои данные о спортивном звании "Заслуженный тренер" :</h4>
      {% csrf_token %}
      {% for field in form10 %}
          <div class="form-group">
-             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+             <label for="{{ field.id_for_label }}">Заслуженный тренер :</label>
              {{ field }}
              <div class="text-danger">
                  {{ field.errors }}
              </div>
          </div>
      {% endfor %}
-     <button class="btn btn-primary form-btn" type="submit">Create</button>
+     <button class="btn btn-primary form-btn" type="submit">Создать</button>
  </form>
 {% endif %}
 
@@ -640,10 +593,10 @@ input[type=number]:focus {
      {% for sport in sports %}        
                <div class="card">
                    <div class="card-body">
-                    <p class="card-text"> Sport degree    : {{ sport.sport_degree}}</p>
+                    <p class="card-text">Заслуженный тренер : {{ sport.sport_degree}}</p>
                    </div>
                          {% if user.id == user_name.owner.id %}
-                               <a href="/info1/{{user_name.id}}/delete_11" class="delete-btn btn btn-danger">Delete</a>
+                               <a href="/info1/{{user_name.id}}/delete_11" class="delete-btn btn btn-danger">Удалить</a>
                          {% endif %}
                </div>               
        {% endfor %}
@@ -658,18 +611,18 @@ input[type=number]:focus {
 
 {% if user.id == user_name.owner.id and subjects|length == 0 %}
 <form style="margin-left: 20px;" action="/info1/{{user_name.id}}/subjects-create" method="POST" novalidate>
-    <h4 class="form-title">Напишите здесь  свои данные :</h4>
+    <h4 class="form-title">Напишите здесь свои данные о преподаваемой дисциплине:</h4>
     {% csrf_token %}
     {% for field in form11 %}
         <div class="form-group">
-            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            <label for="{{ field.id_for_label }}">Преподаваемая дисциплина :</label>
             {{ field }}
             <div class="text-danger">
                 {{ field.errors }}
             </div>
         </div>
     {% endfor %}
-    <button class="btn btn-primary form-btn" type="submit">Create</button>
+    <button class="btn btn-primary form-btn" type="submit">Создать</button>
 </form>
 {% endif %}
 
@@ -678,10 +631,10 @@ input[type=number]:focus {
      {% for subject in subjects %}        
                <div class="card">
                    <div class="card-body">
-                    <p class="card-text"> Subject of teaching    : {{ subject.subject_of_teaching}}</p>
+                    <p class="card-text"> Преподаваемая дисциплина : {{ subject.subject_of_teaching}}</p>
                    </div>
                          {% if user.id == user_name.owner.id %}
-                               <a href="/info1/{{user_name.id}}/delete_12" class="delete-btn btn btn-danger">Delete</a>
+                               <a href="/info1/{{user_name.id}}/delete_12" class="delete-btn btn btn-danger">Удалить</a>
                          {% endif %}
                </div>               
        {% endfor %}

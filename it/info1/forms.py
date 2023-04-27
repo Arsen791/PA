@@ -4,16 +4,16 @@ from django import forms
 
 class CreateNameForm(Form):
     firstname = forms.CharField(required=True,
-                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your first name'}))
+                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите свое имя'}))
     secondname = forms.CharField(required=True,
                                widget=forms.TextInput(attrs={'class': 'form-control',
-                                                                 'placeholder': 'Enter your second name'}))  
+                                                                 'placeholder': 'Введите свое фамилия'}))  
 class CreateBirthForm(Form):
     date_of_birth = forms.DateField(required=True,
-                               widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Enter your date of birth', 'type': 'date'}))
+                               widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Введите дату своего рождения', 'type': 'date'}))
     place_of_birth = forms.CharField(required=True,
                                widget=forms.TextInput(attrs={'class': 'form-control',
-                                                                 'placeholder': 'Enter your place of birth'}))
+                                                                 'placeholder': 'Введите свое место рождения'}))
     
 class CreateInfoForm(Form):
     specialization = forms.CharField(required=True,
@@ -41,11 +41,10 @@ class CreateCriminalForm(Form):
                                widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Yes or No   '}))
     
 class CreateMedicineForm(Form):
-    medicine_number = forms.IntegerField(required=True,
+    medicine_number = forms.CharField(required=True,
                                widget=forms.NumberInput(attrs={'class': 'form-control',
                                                                  'placeholder': 'Enter your medicine number  '}))
-    medicine_date = forms.DateField(required=True,
-                               widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Enter your medicine date  ', 'type': 'date'}))
+
     
 class CreateMasterForm(Form):
     master_degree = forms.CharField(required=True,
