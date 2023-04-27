@@ -13,11 +13,7 @@ class LoginForm(Form):
 class UserRegistrationForm(ModelForm):
     repeat_password = forms.CharField(min_length=8, max_length=20, required=True, 
                                       widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Repeat Password'}))
-    CHOICES = [
-        ('PR', 'Преподаватель'),
-        ('DE', 'Декан'),
-]
-    status = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+
 
 
     class Meta:

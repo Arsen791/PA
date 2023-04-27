@@ -1,5 +1,5 @@
 from django.contrib import admin
-from info1.models import User_name, User_birth, User_info, User_work, Practice, Criminal, Medicine, Master, Doctor, Phd, Professor, Sport, Subject, Employee
+from info1.models import User_name, User_birth, User_info, User_work, Practice, Criminal, Medicine, Master, Doctor, Phd, Professor, Sport, Subject
 
 # Register your models here.
 admin.site.register(User_name)
@@ -15,4 +15,4 @@ admin.site.register(Phd)
 admin.site.register(Professor)
 admin.site.register(Sport)
 admin.site.register(Subject)
-admin.site.register(Employee)
+

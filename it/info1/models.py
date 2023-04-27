@@ -118,21 +118,3 @@ class Subject (models.Model):
         verbose_name = 'Subject'
         verbose_name_plural = 'Subjects'
 
-class Employee (models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=False)
-    STATUS_CHOICES = [
-        ('PR', 'Преподаватель'),
-        ('DE', 'Декан'),
-
-    ]
-    status = models.CharField(
-        max_length=2,
-        choices=STATUS_CHOICES,
-        default='ST',
-    )
-
-    class Meta:
-        permissions = [('is_dean', 'Декан')]
-
-    def is_dean(self):
-        return self.status == 'DE'
