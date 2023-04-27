@@ -38,7 +38,7 @@ class CreatePracticeForm(Form):
     
 class CreateCriminalForm(Form):
     criminal_record = forms.CharField(required=True,
-                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Yes or No   '}))
+                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Да. В 2015 году я был осужден за кражу в крупном размере и получил условный срок на 2 года. Суд был проведен в г. Москва или Нет '}))
     
 class CreateMedicineForm(Form):
     medicine_number = forms.CharField(required=True,
