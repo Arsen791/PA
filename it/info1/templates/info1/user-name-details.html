@@ -213,7 +213,7 @@ input[type=number]:focus {
     <div class="menu1" >
       <div class="tab">Таблица</div>
           <div class="q">{{user.first_name}} {{user.last_name}}</div>
-          <div style="margin-left: 50px;"><a class="q" aria-current="page" href="/auth/logout">Logout</a></div>
+          <div style="margin-left: 50px;"><a class="q" aria-current="page" href="/auth/logout">Выйти</a></div>
     </div>
   </div>
   <div class="card-1">
@@ -224,7 +224,7 @@ input[type=number]:focus {
         <p class="card-text">{{user_name.secondname}}</p>
       </div>
         {% if user.id == user_name.owner.id %}
-          <a class="delete-btn" href="/info1/{{user_name.id}}/delete/">Delete blog</a>
+          <a class="delete-btn" href="/info1/{{user_name.id}}/delete/">Удалить</a>
         {% endif %}
       </div>
     </div>
@@ -242,7 +242,7 @@ input[type=number]:focus {
                     {{ field.errors }}
                 </div>
             </div>
-        <button class="btn btn-primary form-btn" type="submit">Create</button>
+        <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
 {% endif %}
 
@@ -256,7 +256,7 @@ input[type=number]:focus {
                 <p class="card-text">{{ user_name.created_at }}</p>
               </div>
                 {% if user.id == user_name.owner.id %}
-                  <a href="/info1/{{user_name.id}}/delete_1" class="delete-btn btn btn-danger">Delete</a>
+                  <a href="/info1/{{user_name.id}}/delete_1" class="delete-btn btn btn-danger">Удалить</a>
                 {% endif %}
               
             </div>
@@ -286,8 +286,7 @@ input[type=number]:focus {
                     {{ field.errors }}
                 </div>
             </div>
-        {% endfor %}
-        <button class="btn btn-primary form-btn" type="submit">Create</button>
+        <button class="btn btn-primary form-btn" type="submit">Создать</button>
     </form>
 {% endif %}
 
