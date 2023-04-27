@@ -92,11 +92,11 @@ def user_info_create(request, pk):
                 orga_of_education = form.data.get('orga_of_education')
                 year_of_graduation = form.data.get('year_of_graduation')
                 user_info = User_info(
-                    id=user_name.id,  # устанавливаем id равным id user_name
+                    id=user_name.id,  
                     specialization=specialization,
                     orga_of_education=orga_of_education,
                     year_of_graduation=year_of_graduation,
-                    user_name=user_name  # устанавливаем связь с user_name
+                    user_name=user_name  
                 )
                 user_info.save()
                 return redirect('/info1/' + str(user_name.id) + '/')
@@ -241,8 +241,8 @@ def medicine_create(request, pk):
             form = CreateMedicineForm(request.POST)
             if form.is_valid():
                 medicine_number = form.data.get('medicine_number')
-                medicine_date = form.data.get('medicine_date')
-                medicine = Medicine(medicine_number=medicine_number, medicine_date=medicine_date, id=user_name.id, user_name=user_name)
+
+                medicine = Medicine(medicine_number=medicine_number, id=user_name.id, user_name=user_name)
                 medicine.save()
                 return redirect('/info1/' + str(user_name.id) + '/')
             else:
