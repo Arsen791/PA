@@ -252,7 +252,7 @@ input[type=number]:focus {
           {% for user_birth in user_births %}
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Год рождения: {{ user_birth.date_of_birth }}</h5>
+                <p class="card-text">Год рождения: {{ user_birth.date_of_birth }}</p>
                 <p class="card-text">Место рождения: {{ user_birth.place_of_birth }}</p>
                 <p class="card-text">{{ user_name.created_at }}</p>
               </div>
@@ -296,7 +296,7 @@ input[type=number]:focus {
                   {% for user_info in user_infos %}
                   <div class='card'>
                             <div class="card-body">
-                                <p class="card-title">Специальность: {{ user_info.specialization }}</p>
+                                <p class="card-text">Специальность: {{ user_info.specialization }}</p>
                                 <p class="card-text">Организация образования: {{ user_info.orga_of_education }}</p>
                                 <p class="card-text">Год окончания : {{ user_info.year_of_graduation}}</p>
                             </div>
