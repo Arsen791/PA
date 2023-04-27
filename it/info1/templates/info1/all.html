@@ -109,7 +109,7 @@
   </style>
   <script>
     function downloadCSV(csv, file) {
-  file = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  file = new Blob([csv], { type: 'text/csv;charset=windows-1251;' });
   var url = window.URL.createObjectURL(file);
   var downloadLink = document.createElement('a');
   downloadLink.href = url;
