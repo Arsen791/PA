@@ -42,7 +42,7 @@ class CreateCriminalForm(Form):
     
 class CreateMedicineForm(Form):
     medicine_number = forms.CharField(required=True,
-                               widget=forms.NumberInput(attrs={'class': 'form-control',
+                               widget=forms.TextInput(attrs={'class': 'form-control',
                                                                  'placeholder': 'Enter your medicine number  '}))
 
     
