@@ -32,7 +32,7 @@ urlpatterns = [
     path('info1/<int:pk>/professors-create', professor_create, name='professor_create'),
     path('info1/<int:pk>/sports-create', sport_create, name='sport_create'),
     path('info1/<int:pk>/subjects-create', subject_create, name='subject_create'),
-    path('all.html', all_page, name='all_page'),
+    path('all.html', all_page, name='all'),
 ]
 
     
