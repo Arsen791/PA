@@ -109,9 +109,8 @@ form button[type="submit"] {
         <div class="col-12">
             <div class="col-12">
                 <form name="create_blog" method="POST" novalidate>
-              <h2>Create new blog</h2>
+              <h2>Создать новую таблицу</h2>
               {% csrf_token %}
-                {% for field in form %}
                     <div class="field-wrapper">
                         Имя : {{ form.firstname }}
                         <div class="text-danger">
@@ -124,7 +123,6 @@ form button[type="submit"] {
                       {{ field.errors }}
                       </div>
                   </div>
-                {% endfor %}
               <button class="btn btn-primary d-block col-12" type="submit">Создать</button>
             </form>
             </div>
